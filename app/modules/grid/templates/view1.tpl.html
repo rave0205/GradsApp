@@ -1,0 +1,37 @@
+<p>This is the partial for view 1.</p>
+<label>Search: <input ng-model="gridController.searchText"></label>
+
+
+<div class="col-sm-12">
+    <table id="example2" class="table table-bordered table-hover dataTable"
+           role="grid" aria-describedby="example2_info">
+        <thead>
+        <tr>
+            <th rowspan="1" colspan="1">Name</th>
+            <th rowspan="1" colspan="1">Company</th>
+            <th rowspan="1" colspan="1">Email</th>
+            <th rowspan="1" colspan="1">Enabled</th>
+            <th rowspan="1" colspan="1">Added</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="user in gridController.users | filter:gridController.searchText"  role="row">
+        <td class="sorting_1">{{user.name}}</td>
+        <td>{{user.company}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.enabled}}</td>
+        <td>{{user.added}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th rowspan="1" colspan="1">Name</th>
+            <th rowspan="1" colspan="1">Company</th>
+            <th rowspan="1" colspan="1">Email</th>
+            <th rowspan="1" colspan="1">Enabled</th>
+            <th rowspan="1" colspan="1">Added</th>
+        </tr>
+        </tfoot>
+    </table>
+</div>

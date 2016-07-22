@@ -1,0 +1,27 @@
+{
+	"name": "angular-seed",
+	"description": "ngportal npm dependencies",
+	"private": true,
+	"version": "0.1.0",
+	"devDependencies": {
+		"bower": "^1.3.12",
+		"grunt": "^0.4.5",
+		"grunt-contrib-connect": "^0.9.0",
+		"grunt-contrib-watch": "^0.6.1",
+		"grunt-karma": "^0.10.1",
+		"grunt-open": "^0.2.3",
+		"grunt-protractor-runner": "^1.2.1",
+		"grunt-shell-spawn": "^0.3.2",
+		"jasmine-core": "^2.2.0",
+		"karma": "^0.12.31",
+		"karma-chrome-launcher": "^0.1.7",
+		"karma-coverage": "^0.2.7",
+		"karma-firefox-launcher": "^0.1.4",
+		"karma-html2js-preprocessor": "^0.1.0",
+		"karma-jasmine": "^0.3.5",
+		"karma-junit-reporter": "^0.2.2",
+		"karma-phantomjs-launcher": "^0.1.4",
+		"protractor": "^2.0.0"
+	},
+	"engine": "node >= 0.10.0"
+}

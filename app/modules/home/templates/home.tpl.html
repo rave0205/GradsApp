@@ -1,0 +1,32 @@
+<div>
+    Welcome to the home page
+
+    <a ui-sref="grid"> Go to Grid Page</a>
+    <br>
+    <a ng-click="home.goToGrid()" href="">Go to static page</a>
+
+
+    <div>Some text</div>
+    <div>Some text</div>
+    <div>Some text</div>
+    <div>Some text</div>
+    <form name="details">
+        <input ng-model="home.name">
+        <div>This is the name you have entered: {{home.name}}</div>
+        <input ng-model="home.email" ng-pattern="/^[^@]+@[^@]+\.[a-zA-Z]{2,6}$/">
+
+        <button>Save</button>
+        <button ng-disabled="!details.$dirty">Cancel</button>
+    </form>
+
+    <br>
+    <div ng-init="show = true">
+        {{show}}
+        <div ng-if="show">Removed</div>
+        <div ng-hide="!show">Hidden</div>
+        <div data-ng-show="show">Displayed</div>
+
+        <br>
+        <button ng-click="show=!show">Show/Hide</button>
+    </div>
+</div>
