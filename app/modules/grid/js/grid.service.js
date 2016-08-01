@@ -64,20 +64,16 @@
             return angular.fromJson(data);
         }
 
-        function getData(url, cache, transformResponseCallback) {
+        function getData() {
             var deferred = $q.defer();
             $http({
                 method: 'GET',
-                url: serverBaseUrl + url,
-                cache: cache
+                url: ''
             })
                 .success(function (data) {
                     var result = {};
                     if (data) {
                         result = angular.fromJson(data);
-                    }
-                    if (transformResponseCallback) {
-                        result = transformResponseCallback(data);
                     }
                     deferred.resolve(result);
                 }).error(function (data) {

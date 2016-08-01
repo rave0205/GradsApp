@@ -1,17 +1,19 @@
 (function () {
     'use strict';
 
-    angular.module('gradsApp.home').controller('GridController', GridController);
+    angular.module('gradsApp.grid').controller('GridController', GridController);
 
-    GridController.inject = ['GridService'];
+    GridController.inject = ['GridService', '$state'];
 
-    function GridController(GridService) {
+    function GridController(GridService, $state) {
 
         var gridCtrl = this;
 
         gridCtrl.users = GridService.getLocalData().data;
 
-        
+        gridCtrl.goToHome = function () {
+
+        };
 
 
     }
