@@ -1,6 +1,18 @@
 <p>This is the partial for view 1.</p>
 <label>Search: <input ng-model="gridController.searchText"></label>
+<div grid_display
+     value="{{gridController.myValue}}"
+     default="{{gridController.defaultVal}}"
+     >
 
+</div>
+
+<div grid-display
+     value="{{gridController.value}}"
+     default="{{gridController.defaultVal}}"
+>
+
+</div>
 
 <div class="col-sm-12">
     <table id="example2" class="table table-bordered table-hover dataTable"
@@ -26,7 +38,7 @@
         </tbody>
         <tfoot>
         <tr>
-            <th rowspan="1" colspan="1">Name</th>
+            <th rp0owspan="1" colspan="1">Name</th>
             <th rowspan="1" colspan="1">Company</th>
             <th rowspan="1" colspan="1">Email</th>
             <th rowspan="1" colspan="1">Enabled</th>
@@ -34,4 +46,9 @@
         </tr>
         </tfoot>
     </table>
+    <div grid-display>
+        <div class="default-value-text">
+        {{value ? value : defaultValue }}
+        </div>
+    </div>
 </div>

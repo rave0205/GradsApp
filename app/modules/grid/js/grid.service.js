@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('gradsApp.grid').factory('GridService', GridService);
+    angular.module('gradsApp.grid')
+        .factory('GridService', GridService);
 
     GridService.inject = ['$http', '$q'];
 
@@ -9,6 +10,7 @@
 
         return {
             getData: getData,
+            doSmth: doSmth,
             getLocalData: getLocalData
         };
 
@@ -64,27 +66,14 @@
             return angular.fromJson(data);
         }
 
+        function doSmth (value) {
+            if(value){
+                return true;
+            }
+        }
+
         function getData() {
-            var deferred = $q.defer();
-            $http({
-                method: 'GET',
-                url: ''
-            })
-                .success(function (data) {
-                    var result = {};
-                    if (data) {
-                        result = angular.fromJson(data);
-                    }
-                    deferred.resolve(result);
-                }).error(function (data) {
-                if (isJson(data)) {
-                    deferred.reject(angular.fromJson(data));
-                }
-                else {
-                    deferred.reject(data);
-                }
-            });
-            return deferred.promise;
+           return $http.get("https://api.myjson.com/bins/58giz");
         }
 
 

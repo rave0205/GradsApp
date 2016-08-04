@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('gradsApp.grid').config(gridConfig);
+    angular.module('gradsApp.grid')
+        .config(gridConfig);
 
     gridConfig.inject = ['$stateProvider'];
 

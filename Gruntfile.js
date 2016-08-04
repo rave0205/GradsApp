@@ -101,6 +101,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['connect:webserver', 'open:devserver', 'watch']);
 
 	//tests
+	//used for running unit tests
 	grunt.registerTask('test:unit', ['karma:unit']);
 	grunt.registerTask('test:unit_coverage', ['karma:unit_coverage', 'open:coverage', 'connect:coverage']);
 	grunt.registerTask('test:e2e', ['connect:testserver', 'protractor:singlerun']);

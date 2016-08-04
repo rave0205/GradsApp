@@ -18,7 +18,9 @@ describe('GridController', function () {
         GridService = _GridService_;
         httpBackend = $injector.get('$httpBackend');
 
-        // httpBackend.whenGET(/modules\/.*\/templates\//).respond(200, {});
+        httpBackend
+            .whenGET(/modules\/.*\/templates\//)
+            .respond(200, {});
 
         spyOn(GridService, 'getData').and.callFake(function (credentials) {
             var def = $q.defer();
@@ -46,5 +48,27 @@ describe('GridController', function () {
         expect(gridCtrl).toBeDefined();
         expect(gridCtrl.users).toBe(mockedUsers);
     }));
+
+    it('should change value', inject(function ($controller) {
+        //spec body
+        instantiateTheController($controller);
+
+        expect(gridCtrl.value).toEqual(3);
+
+        gridCtrl.changeValue();
+
+        expect(gridCtrl.value).toEqual(10);
+    }));
+
+    it('should go to state', inject(function ($controller) {
+        //spec body
+        spyOn(state, 'go');
+        instantiateTheController($controller);
+
+        gridCtrl.goToHome();
+
+        expect(state.go).toHaveBeenCalledWith("home");
+    }));
+
 
 });

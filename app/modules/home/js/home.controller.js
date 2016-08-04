@@ -3,7 +3,8 @@
 
     angular.module('gradsApp.home').controller('HomeController', HomeController);
 
-    HomeController.inject = ['$scope', '$state'];
+    HomeController.inject = ['$scope',
+        '$state'];
 
     function HomeController($scope, $state ) {
 
@@ -15,7 +16,7 @@
 
         thisScope.goToGrid = function() {
             $state.go('grid');
-            //$location.url
+            // $location.url('/root/grid')
         };
 
 

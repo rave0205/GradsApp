@@ -18,11 +18,13 @@ module.exports = function (config) {
             'app/bower_components/angular/angular.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
             'app/bower_components/ui-router/release/angular-ui-router.js',
+
             'app/js/app.js',
             'app/js/**/*.js',
             'app/modules/grid/js/grid.js',
             'app/modules/home/js/home.js',
             'app/modules/**/*.js',
+
             'test/unit/*.js'
         ],
 
