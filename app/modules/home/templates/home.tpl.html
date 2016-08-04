@@ -1,7 +1,7 @@
 <div>
     Welcome to the home page
 
-    <a ui-sref="grid"> Go to Grid Page</a>
+    <a id="goToGridLink" ui-sref="grid"> Go to Grid Page</a>
     <br>
     <a ng-click="home.goToGrid()" href="">Go to static page</a>
 
@@ -11,22 +11,22 @@
     <div>Some text</div>
     <div>Some text</div>
     <form name="details">
-        <input ng-model="home.name">
+        <input id="nameInput" ng-model="home.name">
         <div>This is the name you have entered: {{home.name}}</div>
-        <input ng-model="home.email" ng-pattern="/^[^@]+@[^@]+\.[a-zA-Z]{2,6}$/">
+        <input id="emailInput" ng-model="home.email" ng-pattern="/^[^@]+@[^@]+\.[a-zA-Z]{2,6}$/">
 
-        <button>Save</button>
-        <button ng-disabled="!details.$dirty">Cancel</button>
+        <button id="saveBtn">Save</button>
+        <button id="cancelBtn" ng-click="home.resetInputs()" ng-disabled="!details.$dirty">Cancel</button>
     </form>
 
     <br>
     <div ng-init="show = true">
         {{show}}
-        <div ng-if="show">Removed</div>
-        <div ng-hide="!show">Hidden</div>
-        <div data-ng-show="show">Displayed</div>
+        <div id="divWithNgIf" ng-if="show">Removed</div>
+        <div id="divWithNgHide" ng-hide="!show">Hidden</div>
+        <div id="divWithNgShow" data-ng-show="show">Displayed</div>
 
         <br>
-        <button ng-click="show=!show">Show/Hide</button>
+        <button id="showHideBtn" ng-click="show=!show">Show/Hide</button>
     </div>
 </div>

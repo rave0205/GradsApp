@@ -1,5 +1,5 @@
 <p>This is the partial for view 1.</p>
-<label>Search: <input ng-model="gridController.searchText"></label>
+<label>Search: <input id="searchField" ng-model="gridController.searchText"></label>
 <div grid_display
      value="{{gridController.myValue}}"
      default="{{gridController.defaultVal}}"
@@ -15,7 +15,7 @@
 </div>
 
 <div class="col-sm-12">
-    <table id="example2" class="table table-bordered table-hover dataTable"
+    <table id="table" class="table table-bordered table-hover dataTable"
            role="grid" aria-describedby="example2_info">
         <thead>
         <tr>
@@ -28,7 +28,7 @@
         </thead>
         <tbody>
 
-        <tr ng-repeat="user in gridController.users | filter:gridController.searchText"  role="row">
+        <tr ng-repeat="user in gridController.usersFromExternal | filter:gridController.searchText"  role="row">
         <td class="sorting_1">{{user.name}}</td>
         <td>{{user.company}}</td>
         <td>{{user.email}}</td>

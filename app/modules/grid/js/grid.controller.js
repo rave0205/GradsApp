@@ -12,7 +12,9 @@
         gridCtrl.defaultVal = "Default value";
 
         gridCtrl.users = GridService.getLocalData().data;
-        // gridCtrl.m = GridService.getLocalData().data;
+        GridService.getData().then(function(response){
+            gridCtrl.usersFromExternal = response.data.data;
+        });
 
         gridCtrl.goToHome = function () {
             $state.go("home");

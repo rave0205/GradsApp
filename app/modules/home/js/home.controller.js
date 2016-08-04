@@ -19,6 +19,11 @@
             // $location.url('/root/grid')
         };
 
+        thisScope.resetInputs = function () {
+            thisScope.name = null;
+            thisScope.email = null;
+        }
+
 
     }
 })();

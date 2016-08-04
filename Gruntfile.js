@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		},
 		connect: {
 			options: {
-				base: 'app/',
+				base: './app/',
 				hostname: 'localhost'
 			},
 			webserver: {
@@ -25,14 +25,6 @@ module.exports = function(grunt) {
 			testserver: {
 				options: {
 					port: 9999
-				}
-			},
-			//used to see coverage reports create by karma-coverage
-			coverage: {
-				options: {
-					base: 'coverage/',
-					port: 5555,
-					keepalive:true
 				}
 			}
 		},
@@ -82,10 +74,23 @@ module.exports = function(grunt) {
 		},
 		protractor: {
 			options: {
-				keepAlive: true,
-				configFile: "./test/protractor.conf.js"
+				keepAlive: false
 			},
-			singlerun: {}
+			run: {
+				options: {
+					configFile: "./test/protractor.conf.js",
+					args: {
+						baseUrl: 'http://localhost:8888/',
+						specs: ['./test/web/et/*ET.js'],
+						browser: 'chrome'
+					}
+				}
+			},
+			mockedRun: {
+				options: {
+					configFile: "./test/protractor.conf.js"
+				}
+			}
 		}
 	});
 
@@ -103,8 +108,10 @@ module.exports = function(grunt) {
 	//tests
 	//used for running unit tests
 	grunt.registerTask('test:unit', ['karma:unit']);
-	grunt.registerTask('test:unit_coverage', ['karma:unit_coverage', 'open:coverage', 'connect:coverage']);
 	grunt.registerTask('test:e2e', ['connect:testserver', 'protractor:singlerun']);
+
+	grunt.registerTask('test:e2e:mocked', ['install', 'connect:testserver', 'protractor:mockedRun']);
+	grunt.registerTask('test:e2e', ['install', 'protractor:run']);
 
 	//installation
 	grunt.registerTask('install', ['shell:npm_install', 'shell:protractor_install']);
