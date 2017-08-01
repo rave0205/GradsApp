@@ -1,17 +1,16 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		shell: {
-			options: {
-				stdout: true
-			},
-			protractor_install: {
-				command: 'node ./node_modules/protractor/bin/webdriver-manager update',
-				command: 'node ./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update'
-			},
-			npm_install: {
-				command: 'npm install'
-			}
-		},
+        shell: {
+            options: {
+                stdout: true
+            },
+            protractor_install: {
+                command: 'node ./node_modules/protractor/bin/webdriver-manager update --standalone'
+            },
+            npm_install: {
+                command: 'npm install'
+            }
+        },
 		connect: {
 			options: {
 				base: './app/',

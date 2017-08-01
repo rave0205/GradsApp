@@ -3,7 +3,7 @@ exports.config = {
         './web/it/gridIT.js',
         './web/it/homeIT.js'
     ],
-    seleniumServerJar: './../node_modules/protractor/selenium/selenium-server-standalone-2.47.1.jar',
+    // seleniumServerJar: './../node_modules/protractor/selenium/selenium-server-standalone-2.47.1.jar',
     capabilities: {'browserName': 'chrome'},
 
     baseUrl: 'http://localhost:9999/',
